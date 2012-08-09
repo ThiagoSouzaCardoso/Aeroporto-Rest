@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.usjt.aeroporto.dao.interfaces.GenericDAO;
 
-
 @Transactional
 public abstract class GenericDAOImpl<T> implements GenericDAO<T>, Serializable {
 
@@ -26,31 +25,26 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>, Serializable {
 		this.classe = classe;
 	}
 
-	@Override
 	public void save(T t) {
 
 		getCurrentSession().persist(t);
 
 	}
 
-	@Override
 	public void update(T t) {
 		getCurrentSession().merge(t);
 
 	}
 
-	@Override
 	public void delete(T t) {
 		entityManager.remove(t);
 
 	}
 
-	@Override
 	public T findById(Long id) {
 		return getCurrentSession().find(classe, id);
 	}
 
-	@Override
 	public List<T> findByAll() {
 		String jpql = "select p from :pClasse p";
 		Query query = this.getCurrentSession().createQuery(jpql);
