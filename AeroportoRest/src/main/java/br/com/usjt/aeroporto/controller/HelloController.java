@@ -9,6 +9,6 @@ public class HelloController {
 	@RequestMapping("/welcome")
 	public ModelAndView helloWord() {
 		String message = "Hello World, Spring 3.0!";
-		return new ModelAndView("hello", "message", message);
+		return new ModelAndView("/paginas/hello", "message", message);
 	}
 }

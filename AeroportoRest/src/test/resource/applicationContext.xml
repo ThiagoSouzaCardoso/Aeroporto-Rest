@@ -72,7 +72,7 @@
 	<sec:http auto-config="true">
 	 <sec:intercept-url pattern="/paginas/**" access="ROLE_USER"/>
 		 <sec:form-login login-page="/login.html" always-use-default-target="true" 
-			 default-target-url="/welcome.html" login-processing-url="/login"/>
+			 default-target-url="/paginas/welcome.html" login-processing-url="/login"/>
 	
 		<sec:logout logout-success-url="/login.html" logout-url="/logout"/>
 	</sec:http>
@@ -80,5 +80,7 @@
 	<sec:authentication-manager>
 		<sec:authentication-provider user-service-ref="usuarioDaoJPAImpl"/>
 	</sec:authentication-manager>
+	
+	
 	
 </beans>
