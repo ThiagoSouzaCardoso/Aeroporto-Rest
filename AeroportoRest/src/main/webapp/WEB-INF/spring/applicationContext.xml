@@ -60,25 +60,11 @@
 			<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 				<property name="entityManagerFactory" ref="entityManagerFactory" />
 			</bean>
-	
-	
-		<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/pages/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
-	<mvc:annotation-driven/>
-	
-	<sec:http auto-config="true">
-	 <sec:intercept-url pattern="/paginas/**" access="ROLE_USER"/>
-		 <sec:form-login login-page="/login.html" always-use-default-target="true" 
-			 default-target-url="/welcome.html" login-processing-url="/login"/>
-	
-		<sec:logout logout-success-url="/login.html" logout-url="/logout"/>
-	</sec:http>
-	
-	<sec:authentication-manager>
-		<sec:authentication-provider user-service-ref="usuarioDaoJPAImpl"/>
-	</sec:authentication-manager>
+			<bean
+				class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+				<property name="prefix" value="/WEB-INF/pages/" />
+				<property name="suffix" value=".jsp" />
+			</bean>
+			<mvc:annotation-driven/>
 	
 </beans>

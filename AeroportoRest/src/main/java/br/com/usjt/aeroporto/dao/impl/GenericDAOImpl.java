@@ -33,8 +33,8 @@ public abstract class GenericDAOImpl<T> implements GenericDAO<T>, Serializable {
 	}
 
 	@Override
-	public void update(T t) {
-		getCurrentSession().merge(t);
+	public T update(T t) {
+		return getCurrentSession().merge(t);
 
 	}
 
