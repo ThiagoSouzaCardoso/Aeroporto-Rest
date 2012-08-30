@@ -5,11 +5,6 @@
 	<head>
 		<title>Login</title>
 	</head>
-	<body>
-		<c:if test="${param.erro == 'invalido'}">
-            Usuário e/ou senha inválidos!<br/><br/>
-        </c:if>
-		
 		<!--form action="j_spring_security_check" method="post"-->
 		<form action="/AeroportoRest/login" method="post">
 			Login : <input type="text" name="j_username"/><br/>

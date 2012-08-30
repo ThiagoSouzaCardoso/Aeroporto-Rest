@@ -13,10 +13,13 @@
 	    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 			<sec:http auto-config="true">
-				 <sec:form-login login-page="/login.html" authentication-failure-url="/login.html?erro=invalido" 
-				 				 default-target-url="/welcome.html" always-use-default-target="true" login-processing-url="/login"/>                
-				 <sec:intercept-url pattern="/paginas/**" access="ROLE_USER"/>
+				<sec:intercept-url pattern="/paginas/**" access="ROLE_USER"/>
+				<sec:intercept-url pattern="/admin/**" access="ROLE_ADMIN"/>
+				
+				 <sec:form-login login-page="/login.html" 
+				 				 default-target-url="/paginas/welcome.html" always-use-default-target="true" login-processing-url="/login"/>                
 				<sec:logout logout-success-url="/login.html" logout-url="/logout"/>
+				
 			</sec:http>
 		
 			<sec:authentication-manager>

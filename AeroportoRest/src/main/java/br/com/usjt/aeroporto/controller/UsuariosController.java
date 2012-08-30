@@ -8,7 +8,7 @@ public class UsuariosController {
 
 	@RequestMapping("/login")
 	public String index() {
-		return "usuarios/login";
+		return "login";
 	}
 
 }
